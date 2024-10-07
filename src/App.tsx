@@ -1,9 +1,12 @@
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { Avatar, Name } from '@coinbase/onchainkit/identity';
+import { base } from 'viem/chains';
 
 function App() {
   const account = useAccount()
   const { connectors, connect, status, error } = useConnect()
   const { disconnect } = useDisconnect()
+  const address = account.address
 
   return (
     <>
@@ -24,7 +27,14 @@ function App() {
           </button>
         )}
       </div>
-
+      
+      {address && (
+        <>
+          <Avatar address={address} chain={base} />
+          <Name address={address} chain={base} />
+        </>
+      )}
+      
       <div>
         <h2>Connect</h2>
         {connectors.map((connector) => (
