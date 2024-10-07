@@ -27,25 +27,29 @@ function App() {
           </button>
         )}
       </div>
-      
+
       {address && (
         <>
           <Avatar address={address} chain={base} />
           <Name address={address} chain={base} />
         </>
       )}
-      
+
       <div>
         <h2>Connect</h2>
-        {connectors.map((connector) => (
-          <button
-            key={connector.uid}
-            onClick={() => connect({ connector })}
-            type="button"
-          >
-            {connector.name}
-          </button>
-        ))}
+        {connectors.map((connector) => {
+          { console.log(connector.name) }
+          if (connector.name != 'Keplr') {
+            return (<button
+              key={connector.uid}
+              onClick={() => connect({ connector })}
+              type="button"
+            >
+              {connector.name}
+            </button>);
+
+          }
+        })}
         <div>{status}</div>
         <div>{error?.message}</div>
       </div>

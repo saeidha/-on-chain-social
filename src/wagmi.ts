@@ -1,13 +1,11 @@
 import { http, createConfig } from 'wagmi'
 import { base } from 'wagmi/chains'; 
-import { coinbaseWallet, injected, walletConnect } from 'wagmi/connectors'
+import { coinbaseWallet } from 'wagmi/connectors'
 
 export const config = createConfig({
   chains: [base],
   connectors: [
-    injected(),
-    coinbaseWallet(),
-    walletConnect({ projectId: import.meta.env.VITE_WC_PROJECT_ID }),
+    coinbaseWallet()
   ],
   transports: {
     [base.id]: http()
