@@ -1,11 +1,11 @@
 import { http, createConfig } from 'wagmi'
 import { base } from 'wagmi/chains'; 
-import { coinbaseWallet } from 'wagmi/connectors'
+import { metaMask } from 'wagmi/connectors'
 
 export const config = createConfig({
   chains: [base],
   connectors: [
-    coinbaseWallet()
+    metaMask()
   ],
   transports: {
     [base.id]: http()
