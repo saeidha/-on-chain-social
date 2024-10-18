@@ -1,11 +1,17 @@
 import { http, createConfig } from 'wagmi'
 import { base } from 'wagmi/chains'; 
-import { metaMask } from 'wagmi/connectors'
+import { coinbaseWallet } from 'wagmi/connectors'
+
+
+const connector = coinbaseWallet({
+  appName: 'My Wagmi App',
+  preference: 'smartWalletOnly'
+})
 
 export const config = createConfig({
   chains: [base],
   connectors: [
-    metaMask()
+    connector
   ],
   transports: {
     [base.id]: http()

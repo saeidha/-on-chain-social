@@ -39,7 +39,7 @@ function App() {
         <h2>Connect</h2>
         {connectors.map((connector) => {
           { console.log(connector.name) }
-          if (connector.name != 'Keplr') {
+          if (connector.name == 'Coinbase Wallet') {
             return (<button
               key={connector.uid}
               onClick={() => connect({ connector })}
