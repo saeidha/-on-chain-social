@@ -3,13 +3,15 @@ import { Avatar, Name } from '@coinbase/onchainkit/identity';
 import { base } from 'viem/chains';
 import '@coinbase/onchainkit/styles.css';
 import SwapComponents from './Swap'
+import { useTransactionCount } from 'wagmi'
 
 function App() {
   const account = useAccount()
   const { connectors, connect, status, error } = useConnect()
   const { disconnect } = useDisconnect()
   const address = account.address
-
+  const result = useTransactionCount({address: address})
+  
   return (
     <>
       <div>
@@ -56,6 +58,7 @@ function App() {
         <div>{error?.message}</div>
       </div>
 
+      <p>tansaction count: {result.data}</p>
       <SwapComponents/> 
     </>
   )
