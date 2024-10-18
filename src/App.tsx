@@ -1,6 +1,8 @@
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { Avatar, Name } from '@coinbase/onchainkit/identity';
 import { base } from 'viem/chains';
+import '@coinbase/onchainkit/styles.css';
+import SwapComponents from './Swap'
 
 function App() {
   const account = useAccount()
@@ -53,6 +55,8 @@ function App() {
         <div>{status}</div>
         <div>{error?.message}</div>
       </div>
+
+      <SwapComponents/> 
     </>
   )
 }
