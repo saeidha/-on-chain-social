@@ -4,8 +4,7 @@ import { coinbaseWallet } from 'wagmi/connectors'
 
 
 const connector = coinbaseWallet({
-  appName: 'My Wagmi App',
-  preference: 'smartWalletOnly'
+  appName: 'My Wagmi App'
 })
 
 export const config = createConfig({
