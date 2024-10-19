@@ -11,7 +11,7 @@ export const config = createConfig({
   connectors: [
     connector,
     walletConnect({
-      projectId: '8acb8ab42286b5fb6c4f1e8c5d3bd734',
+      projectId: '8acb8ab42286b5fb6c4f1e8c5d3bd734'
     }),
   ],
   transports: {
