@@ -8,6 +8,15 @@ import App from './App.tsx'
 import { config } from './wagmi.ts'
 
 import './index.css'
+import {
+  ConnectModal,
+  defaultWagmiConfig,
+  ProfileModal,
+  SwitchNetworkModal,
+  WalletKitButton,
+  WalletKitOptions,
+  WalletKitProvider,
+} from '@node-real/walletkit';
 
 globalThis.Buffer = Buffer
 
